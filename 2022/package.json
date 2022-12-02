@@ -2,6 +2,11 @@
   "name": "2022",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "watch": "shadow-cljs watch",
+    "watch:day1": "npm run watch -- day1",
+    "repl:day1": "node out/day1.js"
+  },
   "devDependencies": {
     "shadow-cljs": "2.20.13"
   }

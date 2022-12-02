@@ -1,11 +1,10 @@
 ;; shadow-cljs configuration
-{:source-paths
- ["src/dev"
-  "src/main"
-  "src/test"]
+{:source-paths ["src/dev"
+                "src/main"
+                "src/test"]
 
- :dependencies
- []
+ :dependencies [[cider/cider-nrepl "0.28.7"]]
 
- :builds
- {}}
+ :builds {:day1 {:target :node-script
+          :main aoc22.day1.main/init
+          :output-to "out/day1.js"}}}
