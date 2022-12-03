@@ -11,6 +11,6 @@
         after-index (subvec col (+ index 1))]
     (concat before-index after-index)))
 
-(defn debug-value [value]
-  (println "DEBUG-VALUE: " value)
-  value)
+(defn debug-value 
+  ([value] (debug-value value "DEBUG-VALUE:"))
+  ([message value] (println message " " value) value))
