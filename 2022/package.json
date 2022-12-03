@@ -5,7 +5,9 @@
   "scripts": {
     "watch": "shadow-cljs watch",
     "watch:day1": "npm run watch -- day1",
-    "repl:day1": "node out/day1.js"
+    "repl:day1": "node out/day1.js",
+    "test:day1": "npm run watch -- day1-test",
+    "repl:day1-test": "node out/day1-test.js"
   },
   "devDependencies": {
     "shadow-cljs": "2.20.13"

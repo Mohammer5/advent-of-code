@@ -1,6 +1,23 @@
 (ns aoc22.day1.inputs
   (:require [clojure.string]))
 
+(def example-input
+  (clojure.string/join "\n"
+    ["1000"
+     "2000"
+     "3000"
+     ""
+     "4000"
+     ""
+     "5000"
+     "6000"
+     ""
+     "7000"
+     "8000"
+     "9000"
+     ""
+     "10000"]))
+
 (def input-challenge-one
   (clojure.string/join "\n"
     ["5104"

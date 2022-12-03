@@ -1,5 +1,9 @@
 (ns aoc22.day1.main
   (:require [clojure.string]
+            [aoc22.utils :refer [max-num-in-col
+                                 sum
+                                 without-index
+                                 debug-value]]
             [aoc22.day1.inputs :refer [input-challenge-one]]))
 
 (defn parse-input [input]
@@ -20,12 +24,35 @@
 (defn find-max-calories [calories]
   (reduce (fn [cur next] (if (> next cur) next cur)) calories))
 
-(defn determine-max-cal-per-elve [unsummed]
-  (let [summed-calories (map #(reduce + %) unsummed)]
-    (find-max-calories summed-calories)))
+(defn sum-calories [unsummed]
+  (mapv sum unsummed))
 
-(defn determine-max-cal-from-input [input]
-  (determine-max-cal-per-elve (parse-input input)))
+(defn determine-max-cal [summed-calories]
+  (find-max-calories summed-calories))
+
+(defn determine-top-three-cals [summed-calories]
+  (loop [cur-sums summed-calories
+         max-three []]
+    (let [max-num (max-num-in-col cur-sums)
+          index-highest-cal (.indexOf cur-sums max-num)
+          max-three-count (count max-three)]
+      (if (= max-three-count 3)
+        max-three
+        (recur
+          (vec (without-index cur-sums index-highest-cal))
+          (conj max-three max-num))))))
+
+(defn solve-part-one [input]
+  (-> (parse-input input)
+      (sum-calories)
+      determine-max-cal))
+
+(defn solve-part-two [input]
+  (-> (parse-input input)
+      (sum-calories)
+      (determine-top-three-cals)
+      (sum)))
 
 (defn init []
-  (println (determine-max-cal-from-input input-challenge-one)))
+  (println "> part 1: " (solve-part-one input-challenge-one))
+  (println "> part 2: " (solve-part-two input-challenge-one)))
