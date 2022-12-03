@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "test": "npm run watch -- test",
     "watch": "shadow-cljs watch",
     "watch:day1": "npm run watch -- day1",
     "repl:day1": "node out/day1.js",
-    "test:day1": "npm run watch -- day1-test",
-    "repl:day1-test": "node out/day1-test.js"
+    "watch:day2": "npm run watch -- day2",
+    "repl:day2": "node out/day2.js"
   },
   "devDependencies": {
     "shadow-cljs": "2.20.13"

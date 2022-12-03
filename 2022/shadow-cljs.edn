@@ -6,9 +6,12 @@
  :dependencies [[cider/cider-nrepl "0.28.7"]]
 
  :builds {:day1 {:target :node-script
-                 :main aoc22.day1.main/init
+                 :main aoc22.day1.main/day1
                  :output-to "out/day1.js"}
-          :day1-test {:target :node-test
-                 :output-to "out/day1-test.js"
+          :day2 {:target :node-script
+                 :main aoc22.day2.main/day2
+                 :output-to "out/day2.js"}
+          :test {:target :node-test
+                 :output-to "out/test.js"
                  :ns-regexp "-test$"
                  :autorun true}}}

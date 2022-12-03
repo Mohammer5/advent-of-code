@@ -53,6 +53,6 @@
       (determine-top-three-cals)
       (sum)))
 
-(defn init []
+(defn day1 []
   (println "> part 1: " (solve-part-one input-challenge-one))
   (println "> part 2: " (solve-part-two input-challenge-one)))
