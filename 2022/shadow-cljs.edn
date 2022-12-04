@@ -11,6 +11,9 @@
           :day2 {:target :node-script
                  :main aoc22.day2.main/day2
                  :output-to "out/day2.js"}
+          :day3 {:target :node-script
+                 :main aoc22.day3.main/day3
+                 :output-to "out/day3.js"}
           :test {:target :node-test
                  :output-to "out/test.js"
                  :ns-regexp "-test$"

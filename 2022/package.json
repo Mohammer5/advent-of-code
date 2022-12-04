@@ -8,7 +8,9 @@
     "watch:day1": "npm run watch -- day1",
     "repl:day1": "node out/day1.js",
     "watch:day2": "npm run watch -- day2",
-    "repl:day2": "node out/day2.js"
+    "repl:day2": "node out/day2.js",
+    "watch:day3": "npm run watch -- day3",
+    "repl:day3": "node out/day3.js"
   },
   "devDependencies": {
     "shadow-cljs": "2.20.13"
